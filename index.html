@@ -53,29 +53,186 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700;800&display=swap" rel="stylesheet">
     <style>
-        .step {
+        /* ================== Colores ===============================*/
+        
+         :root {
+            --naranja: #dc6d00;
+            --amarillo: #ffd033;
+            --amarillo-sec: #ffdd6c;
+            --blanco: #fff;
+            --txt-lg: 3em;
+            --txt-md: 1em;
+            --txt-sm: .8px;
+            --fondo-blanco: #fff!important;
+            --fondo-gris-gradient: radial-gradient(circle, rgba(215, 216, 220, 1) 0%, rgba(252, 252, 253, 1) 50%, rgba(216, 216, 220, 1) 100%);
+        }
+        
+        body * {
+            font-family: 'Barlow', sans-serif;
+        }
+        
+        section {
             height: 100vh;
         }
         
-        .step-1 {
+        section.regular {
             background-image: url(/assets/img/home-bg.jpg);
             background-repeat: repeat-x;
-            background-size: ;
+            height: 100vh;
+        }
+        
+        .btn-primario {
+            border-radius: 15px;
+            background: var(--naranja);
+            color: var(--amarillo-sec);
+            transition: all 0.5s ease
+        }
+        
+        .btn-primario:hover {
+            background: var(--amarillo-sec);
+            color: var(--naranja);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
+        
+        .bg-naranja {
+            background-color: var(--naranja);
+        }
+        
+        .bg-amarillo {
+            background-color: var(--amarillo);
+        }
+        
+        .bg-patron {
+            background-image: url(/assets/img/home-bg.jpg);
+            background-repeat: repeat-x;
+        }
+        
+        h1 {
+            font-size: var(--txt-lg);
+            font-weight: bold;
+            color: var(--amarillo);
+        }
+        
+        h2 {
+            font-size: var(--txt-lg);
+            font-weight: bold;
+            color: var(--amarillo);
+        }
+        
+        .step {}
+        
+        .step-2 {
+            background-image: url(/assets/img/fondo-sopitas.png);
+            background-position: center;
+            background-size: cover;
+            /* background-attachment: fixed;*/
+        }
+        
+        .translate-box {
+            border-radius: 25px;
+        }
+        
+        .translate-box .head {
+            display: block;
+            border-bottom: 1px solid var(--amarillo-sec);
+            color: var(--amarillo-sec)!important;
+            text-align: left;
+        }
+        
+        .translate-box .head a {
+            color: var(--amarillo-sec);
+            margin-left: 2em;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            display: inline-block;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: .7;
+            transition: all 0.5s ease;
+        }
+        
+        .translate-box .head a.active {
+            opacity: 1;
+        }
+        
+        .translate-box .head a:hover {}
+        
+        .translate-box .head a.active::after {
+            content: " ";
+            width: 80%;
+            position: absolute;
+            left: 10%;
+            bottom: 0;
+            height: 3px;
+            background-color: var(--amarillo);
+        }
+        
+        @media screen and (max-width:992px) {
+            section {
+                height: auto;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid step step-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-
+    <section class="regular">
+        <div class="container-fluid step step-1 h-100 ">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-md-12 text-center">
+                        <img src="/assets/img/welcome-text.svg">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="regular">
+        <div class="container-fluid step step-2 h-100">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-md-12 text-center">
+                        <h1 class="mb-3">Aprende tus primeras palabras con señas.</h1>
+                        <a href="#" class="btn-primario py-2 px-4 mt-5">Empezar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="">
+        <div class="container-fluid step step-3 h-100">
+            <div class="row row-eq-height h-100 align-items-center">
+                <div class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100">
+                    <img src="/assets/img/hola.png" class="img-fluid">
+                </div>
+                <div class="col-md-6 text-center bg-patron p-5 d-flex align-items-center h-100">
+                    <div class="translate-box mx-auto p-0 bg-naranja">
+                        <div class="head">
+                            <a href=" javascript:void(0);" class="active">Español</a>
+                            <a href=" javascript:void(0);">Lenguaje de Señas</a>
+                        </div>
+                        <div class="content espa text-left p-2">
+                            <h2 class="my-4">Bienvenido a sopa de señas</h2>
+                        </div>
+                        <div class="content senias">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <!-- Scripts -->
