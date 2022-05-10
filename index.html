@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
-    <meta name="author" content="Inovatik">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
     <meta property="og:site_name" content="" />
@@ -23,35 +24,24 @@
     <meta property="og:url" content="" />
     <!-- where do you want your post to link to -->
 
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon.ico">
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- Website Title -->
-    <title>Lala Plenia</title>
+    <title>Sopa de Señas | La moderna</title>
 
     <!-- styles externos -->
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'>
+
+
 
 
     <!-- Styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,14 +65,19 @@
             font-family: 'Barlow', sans-serif;
         }
         
+        body {
+            width: 100%
+        }
+        
         section {
             height: 100vh;
         }
         
         section.regular {
-            background-image: url(/assets/img/home-bg.jpg);
+            background-image: url(assets/img/home-bg.jpg);
             background-repeat: repeat-x;
             height: 100vh;
+            background-size: auto 100%;
         }
         
         .btn-primario {
@@ -111,8 +106,9 @@
         }
         
         .bg-patron {
-            background-image: url(/assets/img/home-bg.jpg);
+            background-image: url(assets/img/home-bg.jpg);
             background-repeat: repeat-x;
+            background-size: auto 100%;
         }
         
         h1 {
@@ -127,10 +123,32 @@
             color: var(--amarillo);
         }
         
+        .texto-standard {
+            font-size: var(--txt-md);
+            color: var(--amarillo);
+        }
+        
+        header {
+            border-bottom: 1px solid var(--amarillo);
+            position: fixed;
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, .1);
+            z-index: 9999;
+        }
+        
+        header .navi a {
+            color: var(--amarillo);
+            font-size: var(--txt-md);
+            margin-left: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
         .step {}
         
         .step-2 {
-            background-image: url(/assets/img/fondo-sopitas.png);
+            background-image: url(assets/img/fondo-sopitas.png);
             background-position: center;
             background-size: cover;
             /* background-attachment: fixed;*/
@@ -177,21 +195,135 @@
             background-color: var(--amarillo);
         }
         
+        .translate-box .content {
+            max-height: 0px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        .translate-box .content.activo {
+            max-height: 10000px;
+            overflow: hidden;
+        }
+        
+        .translate-box textarea {
+            background: transparent;
+            border: none;
+            font-size: var(--txt-lg);
+            color: var(--amarillo);
+            font-weight: bold;
+            width: 100%;
+            height: auto;
+        }
+        
+        .translate-box textarea:focus-visible {
+            border: none;
+            outline: none;
+        }
+        
+        .translate-box textarea::placeholder {
+            color: var(--amarillo);
+        }
+        
+        .senia .sharing {
+            border: 1px solid var(--amarillo)
+        }
+        
+        img.letra-abc {
+            margin: 10px 15px;
+        }
+        
+        .bg-video {
+            background-image: url(assets/img/placeholder-video.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .bg-black {
+            background: black;
+        }
+        
+        .videoContainer {
+            transition: all 0.5s ease;
+        }
+        
+        .videoContainer video {
+            transition: all 0.5s ease;
+        }
+        
+        .videoContainer .cerrarVideo {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            cursor: pointer;
+        }
+        
+        .bg-cierre {
+            background-image: url(assets/img/cierre.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        
         @media screen and (max-width:992px) {
             section {
                 height: auto;
             }
         }
+        
+        @media screen and (max-width:768px) {
+            .bg-cierre,
+            .bg-video {
+                min-height: 500px!important;
+            }
+            .translate-box .head a {
+                text-align: center;
+                margin: 0 auto;
+            }
+            .translate-box textarea {
+                font-size: var(--txt-md);
+            }
+            .translate-box {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 
-<body>
-    <section class="regular">
+<body id="">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v13.0" nonce="joKkkexR"></script>
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="assets/img/logo-self.svg">
+                </div>
+                <div class="col-md-10 text-right navi">
+                    <a href="#traductor">Traductor</a>
+                    <a href="#abecedario">Abecedario</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="regular ">
         <div class="container-fluid step step-1 h-100 ">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-md-12 text-center">
-                        <img src="/assets/img/welcome-text.svg">
+                        <img src="assets/img/welcome-text.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="regular">
+        <div class="container-fluid step step-1 h-100 ">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-arround">
+                    <div class="col-md-6 mx-auto text-center">
+                        <img src="assets/img/presenta-logo.svg" class="w-100">
+                        <p class="texto-standard mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
                     </div>
                 </div>
             </div>
@@ -209,29 +341,83 @@
             </div>
         </div>
     </section>
-    <section class="">
+    <section class="" id="traductor">
         <div class="container-fluid step step-3 h-100">
             <div class="row row-eq-height h-100 align-items-center">
                 <div class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100">
-                    <img src="/assets/img/hola.png" class="img-fluid">
+                    <img src="assets/img/hola.png" class="img-fluid">
+
                 </div>
-                <div class="col-md-6 text-center bg-patron p-5 d-flex align-items-center h-100">
+                <div class="col-md-6 text-center bg-patron py-5 px-2 px-md-5 d-flex align-items-center h-100">
                     <div class="translate-box mx-auto p-0 bg-naranja">
                         <div class="head">
-                            <a href=" javascript:void(0);" class="active">Español</a>
-                            <a href=" javascript:void(0);">Lenguaje de Señas</a>
+                            <a href=" javascript:void(0);" class="active" data-translate="espa">Español</a>
+                            <a href=" javascript:void(0);" class="activaSenia" data-translate="senia">Lenguaje de Señas</a>
                         </div>
-                        <div class="content espa text-left p-2">
-                            <h2 class="my-4">Bienvenido a sopa de señas</h2>
+                        <div class="content activo espa text-left py-2 px-4">
+                            <textarea type="text" value="" placeholder="Escribe algo y tradúcelo a señas" class="textValue"></textarea>
                         </div>
-                        <div class="content senias">
+                        <div class="content senia">
+                            <div></div>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsopadesenas.com" class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Compartir<i class="fa-brands fa-facebook ml-2 "></i></a>
+                            <a href="https://twitter.com/intent/tweet?url=https://sopadesenas.com&text=Mira%20lo%20incre%C3%ADble%20que%20est%C3%A1" class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Tweet <i class="fa-brands fa-twitter ml-2 "></i></a>
+                        </div>
 
+                        <a href="javascript:void(0)" class="btn-primario py-2 px-4 mt-5 traduce"><strong>Traducir</strong></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="" id="abecedario">
+        <div class="container-fluid step step-3 h-100">
+            <div class="row row-eq-height h-100 align-items-center">
+                <div class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100 bg-video videoContainer ">
+                    <a href="javascript:void(0);" class="mx-auto"> <img src="assets/img/tocar.svg" class="img-fluid mx-auto playVideo"></a>
+                    <i class="fa fa-times text-white  d-none cerrarVideo fa-2x "></i>
+                    <video class="w-100 d-none" controls playsinline>
+                        <source src="/assets/img/video.mp4">
+                    </video>
+                </div>
+                <div class="col-md-6 text-center bg-patron py-5 px-2 px-md-5 d-flex align-items-center h-100">
+                    <div class="translate-box mx-auto p-0 bg-naranja">
+
+                        <div class="content activo espa text-center text-md-left py-2 px-4">
+                            <h2 class="my-3">Abecedario</h2>
+
+                            <img src="assets/img/letras-svg/a.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/b.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/c.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/d.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/e.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/f.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/g.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/h.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/i.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/j.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/k.svg" class="letra-abc">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <section class="">
+        <div class="container-fluid step step-3 h-100">
+            <div class="row row-eq-height h-100 align-items-center">
+                <div class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100 bg-cierre">
+
+                </div>
+                <div class="col-md-6 text-center bg-patron p-5 align-items-center h-100">
+                    <img src="assets/img/mexico.svg" class="d-block w-100">
+                    <p class="texto-standard d-block w-100 d-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
 
@@ -244,12 +430,117 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js'></script>
+
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js " integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
-    <script src="js/bootstrap.min.js "></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js " integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
-    <script src="js/scripts.js "></script>
+    <!-- Scroll Plugin de fullpage.js -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.1/fullpage.css">
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script>
+        $(".translate-box .head a").click(function() {
+
+            var lang = $(this).data("translate")
+            $(".translate-box .head a.active").removeClass("active")
+            $(this).addClass("active");
+            $("#traductor .content.activo").removeClass("activo").delay(700).queue(function() {
+                $("#traductor ." + lang).addClass("activo").dequeue();
+            });
+
+        })
+
+        $(".traduce").click(function() {
+            var str = $(".textValue").val()
+            $(".senia div").empty();
+            for (var i = 0; i < str.length; i++) {
+                $(".senia div").append('<img class="letra-abc" src="/assets/img/letras-svg/' + str[i] + '.svg">');
+            }
+            $(".activaSenia").click()
+        })
+        $(".playVideo").click(function() {
+            $(".videoContainer").addClass("bg-black")
+            $(this).addClass("d-none")
+            $(".videoContainer video").removeClass("d-none")
+            $(".videoContainer i").removeClass("d-none")
+            $(".videoContainer video")[0].play()
+        })
+        $(".cerrarVideo").click(function() {
+            $(".videoContainer").removeClass("bg-black")
+            $(".playVideo").removeClass("d-none")
+            $(".videoContainer video").addClass("d-none")
+            $(".videoContainer i").addClass("d-none")
+            $(".videoContainer video")[0].pause();
+            $(".videoContainer video")[0].currentTime = 0;
+            $(".videoContainer video")[0].load();
+        })
+        if ($(window).width() > 960) {
+            const sections = document.querySelectorAll("section");
+
+            // this scrolling object just allows us to conveniently call scrolling.enable(), scrolling.disable(), and check if scrolling.enabled is true. 
+            // some browsers (like iOS Safari) handle scrolling on a separate thread and can cause things to get out of sync (jitter/jumpy), so when we're animating the scroll position, force an update of GSAP tweens when there's a scroll event in order to maintain synchronization)
+            const scrolling = {
+                enabled: true,
+                events: "scroll,wheel,touchmove,pointermove".split(","),
+                prevent: e => e.preventDefault(),
+                disable() {
+                    if (scrolling.enabled) {
+                        scrolling.enabled = false;
+                        window.addEventListener("scroll", gsap.ticker.tick, {
+                            passive: true
+                        });
+                        scrolling.events.forEach((e, i) => (i ? document : window).addEventListener(e, scrolling.prevent, {
+                            passive: false
+                        }));
+                    }
+                },
+                enable() {
+                    if (!scrolling.enabled) {
+                        scrolling.enabled = true;
+                        window.removeEventListener("scroll", gsap.ticker.tick);
+                        scrolling.events.forEach((e, i) => (i ? document : window).removeEventListener(e, scrolling.prevent));
+                    }
+                }
+            };
+
+
+            function goToSection(section, anim, i) {
+                if (scrolling.enabled) { // skip if a scroll tween is in progress
+                    scrolling.disable();
+                    gsap.to(window, {
+                        scrollTo: {
+                            y: section,
+                            autoKill: false
+                        },
+                        onComplete: scrolling.enable,
+                        duration: 1
+                    });
+
+                    anim && anim.restart();
+                }
+            }
+
+            sections.forEach((section, i) => {
+                const intoAnim = gsap.from(section.querySelector(".right-col"), {
+                    yPercent: 50,
+                    duration: 1,
+                    paused: true
+                });
+
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top bottom-=1",
+                    end: "bottom top+=1",
+                    onEnter: () => goToSection(section, intoAnim),
+                    onEnterBack: () => goToSection(section)
+                });
+
+            });
+        }
+    </script>
 </body>
 
 
