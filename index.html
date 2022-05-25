@@ -48,8 +48,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;400;700;800&display=swap" rel="stylesheet">
     <style>
         /* ================== Colores ===============================*/
-        
-         :root {
+
+        :root {
             --naranja: #dc6d00;
             --amarillo: #ffd033;
             --amarillo-sec: #ffdd6c;
@@ -57,77 +57,77 @@
             --txt-lg: 3em;
             --txt-md: 1em;
             --txt-sm: .8px;
-            --fondo-blanco: #fff!important;
+            --fondo-blanco: #fff !important;
             --fondo-gris-gradient: radial-gradient(circle, rgba(215, 216, 220, 1) 0%, rgba(252, 252, 253, 1) 50%, rgba(216, 216, 220, 1) 100%);
         }
-        
+
         body * {
             font-family: 'Barlow', sans-serif;
         }
-        
+
         body {
             width: 100%
         }
-        
+
         section {
             height: 100vh;
         }
-        
+
         section.regular {
             background-image: url(assets/img/home-bg.jpg);
             background-repeat: repeat-x;
             height: 100vh;
             background-size: auto 100%;
         }
-        
+
         .btn-primario {
             border-radius: 15px;
             background: var(--naranja);
             color: var(--amarillo-sec);
             transition: all 0.5s ease
         }
-        
+
         .btn-primario:hover {
             background: var(--amarillo-sec);
             color: var(--naranja);
             text-decoration: none;
         }
-        
+
         a:hover {
             text-decoration: none;
         }
-        
+
         .bg-naranja {
             background-color: var(--naranja);
         }
-        
+
         .bg-amarillo {
             background-color: var(--amarillo);
         }
-        
+
         .bg-patron {
             background-image: url(assets/img/home-bg.jpg);
             background-repeat: repeat-x;
             background-size: auto 100%;
         }
-        
+
         h1 {
             font-size: var(--txt-lg);
             font-weight: bold;
             color: var(--amarillo);
         }
-        
+
         h2 {
             font-size: var(--txt-lg);
             font-weight: bold;
             color: var(--amarillo);
         }
-        
+
         .texto-standard {
             font-size: var(--txt-md);
             color: var(--amarillo);
         }
-        
+
         header {
             border-bottom: 1px solid var(--amarillo);
             position: fixed;
@@ -136,7 +136,7 @@
             background-color: rgba(0, 0, 0, .1);
             z-index: 9999;
         }
-        
+
         header .navi a {
             color: var(--amarillo);
             font-size: var(--txt-md);
@@ -144,27 +144,27 @@
             font-weight: bold;
             text-transform: uppercase;
         }
-        
+
         .step {}
-        
+
         .step-2 {
             background-image: url(assets/img/fondo-sopitas.png);
             background-position: center;
             background-size: cover;
             /* background-attachment: fixed;*/
         }
-        
+
         .translate-box {
             border-radius: 25px;
         }
-        
+
         .translate-box .head {
             display: block;
             border-bottom: 1px solid var(--amarillo-sec);
-            color: var(--amarillo-sec)!important;
+            color: var(--amarillo-sec) !important;
             text-align: left;
         }
-        
+
         .translate-box .head a {
             color: var(--amarillo-sec);
             margin-left: 2em;
@@ -178,13 +178,13 @@
             opacity: .7;
             transition: all 0.5s ease;
         }
-        
+
         .translate-box .head a.active {
             opacity: 1;
         }
-        
+
         .translate-box .head a:hover {}
-        
+
         .translate-box .head a.active::after {
             content: " ";
             width: 80%;
@@ -194,18 +194,18 @@
             height: 3px;
             background-color: var(--amarillo);
         }
-        
+
         .translate-box .content {
             max-height: 0px;
             overflow: hidden;
             transition: all 0.5s ease;
         }
-        
+
         .translate-box .content.activo {
             max-height: 10000px;
             overflow: hidden;
         }
-        
+
         .translate-box textarea {
             background: transparent;
             border: none;
@@ -215,74 +215,79 @@
             width: 100%;
             height: auto;
         }
-        
+
         .translate-box textarea:focus-visible {
             border: none;
             outline: none;
         }
-        
+
         .translate-box textarea::placeholder {
             color: var(--amarillo);
         }
-        
+
         .senia .sharing {
             border: 1px solid var(--amarillo)
         }
-        
+
         img.letra-abc {
             margin: 10px 15px;
             max-height: 70px;
+            cursor: pointer;
         }
-        
+
         .bg-video {
             background-image: url(assets/img/placeholder-video.jpg);
             background-position: center;
             background-size: cover;
         }
-        
+
         .bg-black {
             background: black;
         }
-        
+
         .videoContainer {
             transition: all 0.5s ease;
         }
-        
+
         .videoContainer video {
             transition: all 0.5s ease;
         }
-        
+
         .videoContainer .cerrarVideo {
             position: absolute;
             top: 20%;
             right: 10%;
             cursor: pointer;
         }
-        
+
         .bg-cierre {
             background-image: url(assets/img/cierre.jpg);
             background-position: center;
             background-size: cover;
         }
-        
+
         @media screen and (max-width:992px) {
             section {
                 height: auto;
             }
         }
-        
+
         @media screen and (max-width:768px) {
+
             .bg-cierre,
             .bg-video {
-                min-height: 500px!important;
+                min-height: 500px !important;
             }
+
             .translate-box .head a {
                 text-align: center;
                 margin: 0 auto;
             }
+
             .translate-box textarea {
                 font-size: var(--txt-md);
             }
+
             .translate-box {
                 width: 90%;
             }
@@ -292,7 +297,8 @@
 
 <body id="">
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v13.0" nonce="joKkkexR"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v13.0"
+        nonce="joKkkexR"></script>
     <header id="header">
         <div class="container">
             <div class="row">
@@ -324,19 +330,21 @@
                 <div class="row h-100 align-items-center justify-content-arround">
                     <div class="col-md-6 mx-auto text-center">
                         <img src="assets/img/presenta-logo.svg" class="w-100">
-                        <p class="texto-standard mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                        <p class="texto-standard mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="regular">
+    <section class="regular empezar">
         <div class="container-fluid step step-2 h-100">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-md-12 text-center">
                         <h1 class="mb-3">Aprende tus primeras palabras con señas.</h1>
-                        <a href="#" class="btn-primario py-2 px-4 mt-5">Empezar</a>
+                        <a href="#traductor" class="btn-primario py-2 px-4 mt-5 scrollBtn">Empezar</a>
                     </div>
                 </div>
             </div>
@@ -353,18 +361,25 @@
                     <div class="translate-box mx-auto p-0 bg-naranja">
                         <div class="head">
                             <a href=" javascript:void(0);" class="active" data-translate="espa">Español</a>
-                            <a href=" javascript:void(0);" class="activaSenia" data-translate="senia">Lenguaje de Señas</a>
+                            <a href=" javascript:void(0);" class="activaSenia" data-translate="senia">Lenguaje de
+                                Señas</a>
                         </div>
                         <div class="content activo espa text-left py-2 px-4">
-                            <textarea type="text" value="" placeholder="Escribe algo y tradúcelo a señas" class="textValue"></textarea>
+                            <textarea type="text" value="" placeholder="Escribe algo y tradúcelo a señas"
+                                class="textValue"></textarea>
                         </div>
                         <div class="content senia">
                             <div></div>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsopadesenas.com" class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Compartir<i class="fa-brands fa-facebook ml-2 "></i></a>
-                            <a href="https://twitter.com/intent/tweet?url=https://sopadesenas.com&text=Mira%20lo%20incre%C3%ADble%20que%20est%C3%A1" class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Tweet <i class="fa-brands fa-twitter ml-2 "></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsopadesenas.com"
+                                class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Compartir<i
+                                    class="fa-brands fa-facebook ml-2 "></i></a>
+                            <a href="https://twitter.com/intent/tweet?url=https://sopadesenas.com&text=Mira%20lo%20incre%C3%ADble%20que%20est%C3%A1"
+                                class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Tweet <i
+                                    class="fa-brands fa-twitter ml-2 "></i></a>
                         </div>
 
-                        <a href="javascript:void(0)" class="btn-primario py-2 px-4 mt-5 traduce"><strong>Traducir</strong></a>
+                        <a href="javascript:void(0)"
+                            class="btn-primario py-2 px-4 mt-5 traduce"><strong>Traducir</strong></a>
                     </div>
                 </div>
             </div>
@@ -375,8 +390,10 @@
     <section class="" id="abecedario">
         <div class="container-fluid step step-3 h-100">
             <div class="row row-eq-height h-100 align-items-center">
-                <div class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100 bg-video videoContainer ">
-                    <a href="javascript:void(0);" class="mx-auto"> <img src="assets/img/tocar.svg" class="img-fluid mx-auto playVideo"></a>
+                <div
+                    class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100 bg-video videoContainer ">
+                    <a href="javascript:void(0);" class="mx-auto"> <img src="assets/img/tocar.svg"
+                            class="img-fluid mx-auto playVideo"></a>
                     <i class="fa fa-times text-white  d-none cerrarVideo fa-2x "></i>
                     <video class="w-100 d-none" controls playsinline>
                         <source src="assets/img/video.mp4">
@@ -388,33 +405,34 @@
                         <div class="content activo espa text-center text-md-left py-2 px-4">
                             <h2 class="my-3">Abecedario</h2>
 
-                            <img src="assets/img/letras-svg/a.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/b.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/c.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/d.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/e.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/f.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/g.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/h.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/i.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/j.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/k.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/l.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/m.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/n.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/ñ.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/o.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/p.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/q.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/r.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/s.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/t.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/u.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/v.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/w.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/x.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/y.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/z.svg" class="letra-abc"> 
+                            <img src="assets/img/letras-svg/2/a.svg" class="letra-abc" data-video="assets/videos/a.mp4">
+                            <img src="assets/img/letras-svg/2/b.svg" class="letra-abc" data-video="assets/videos/b.mp4">
+                            <img src="assets/img/letras-svg/2/c.svg" class="letra-abc" data-video="assets/videos/c.mp4">
+                            <img src="assets/img/letras-svg/2/d.svg" class="letra-abc" data-video="assets/videos/d.mp4">
+                            <img src="assets/img/letras-svg/2/e.svg" class="letra-abc" data-video="assets/videos/e.mp4">
+                            <img src="assets/img/letras-svg/2/f.svg" class="letra-abc" data-video="assets/videos/f.mp4">
+                            <img src="assets/img/letras-svg/2/g.svg" class="letra-abc" data-video="assets/videos/g.mp4">
+                            <img src="assets/img/letras-svg/2/h.svg" class="letra-abc" data-video="assets/videos/h.mp4">
+                            <img src="assets/img/letras-svg/2/i.svg" class="letra-abc" data-video="assets/videos/i.mp4">
+                            <img src="assets/img/letras-svg/2/j.svg" class="letra-abc" data-video="assets/videos/j.mp4">
+                            <img src="assets/img/letras-svg/2/k.svg" class="letra-abc" data-video="assets/videos/k.mp4">
+                            <img src="assets/img/letras-svg/2/l.svg" class="letra-abc" data-video="assets/videos/l.mp4">
+                            <img src="assets/img/letras-svg/2/m.svg" class="letra-abc" data-video="assets/videos/m.mp4">
+                            <img src="assets/img/letras-svg/2/n.svg" class="letra-abc" data-video="assets/videos/n.mp4">
+                            <img src="assets/img/letras-svg/2/ñ.svg" class="letra-abc"
+                                data-video="assets/videos/nn.mp4">
+                            <img src="assets/img/letras-svg/2/o.svg" class="letra-abc" data-video="assets/videos/o.mp4">
+                            <img src="assets/img/letras-svg/2/p.svg" class="letra-abc" data-video="assets/videos/p.mp4">
+                            <img src="assets/img/letras-svg/2/q.svg" class="letra-abc" data-video="assets/videos/q.mp4">
+                            <img src="assets/img/letras-svg/2/r.svg" class="letra-abc" data-video="assets/videos/r.mp4">
+                            <img src="assets/img/letras-svg/2/s.svg" class="letra-abc" data-video="assets/videos/s.mp4">
+                            <img src="assets/img/letras-svg/2/t.svg" class="letra-abc" data-video="assets/videos/t.mp4">
+                            <img src="assets/img/letras-svg/2/u.svg" class="letra-abc" data-video="assets/videos/u.mp4">
+                            <img src="assets/img/letras-svg/2/v.svg" class="letra-abc" data-video="assets/videos/v.mp4">
+                            <img src="assets/img/letras-svg/2/w.svg" class="letra-abc" data-video="assets/videos/w.mp4">
+                            <img src="assets/img/letras-svg/2/x.svg" class="letra-abc" data-video="assets/videos/x.mp4">
+                            <img src="assets/img/letras-svg/2/y.svg" class="letra-abc" data-video="assets/videos/y.mp4">
+                            <img src="assets/img/letras-svg/2/z.svg" class="letra-abc" data-video="assets/videos/z.mp4">
                         </div>
                     </div>
                 </div>
@@ -429,7 +447,9 @@
                 </div>
                 <div class="col-md-6 text-center bg-patron p-5 align-items-center h-100">
                     <img src="assets/img/mexico.svg" class="d-block w-100">
-                    <p class="texto-standard d-block w-100 d-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                    <p class="texto-standard d-block w-100 d-block">Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco</p>
                 </div>
             </div>
         </div>
@@ -442,29 +462,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+        integrity="sha512-doJrC/ocU8VGVRx3O9981+2aYUn3fuWVWvqLi1U+tA2MWVzsw+NVKq1PrENF03M+TYBP92PnYUlXFH1ZW0FpLw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js " integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js "
+        integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ=="
+        crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js " integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js "
+        integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+        crossorigin=" anonymous " referrerpolicy="no-referrer "></script>
     <!-- Scroll Plugin de fullpage.js -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.1/fullpage.css">
     <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollToPlugin.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
     <script>
-        $(".translate-box .head a").click(function() {
+        $(".translate-box .head a").click(function () {
 
             var lang = $(this).data("translate")
             $(".translate-box .head a.active").removeClass("active")
             $(this).addClass("active");
-            $("#traductor .content.activo").removeClass("activo").delay(700).queue(function() {
+            $("#traductor .content.activo").removeClass("activo").delay(700).queue(function () {
                 $("#traductor ." + lang).addClass("activo").dequeue();
             });
 
@@ -472,57 +500,71 @@
 
         function eliminarDiacriticos(texto) {
             return texto
-             .normalize('NFD')
-             .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi,"$1")
-             .normalize();
-            }
-
-        function eliminarEspacios(texto){
-             return texto.split(" ").join("")
+                .normalize('NFD')
+                .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi, "$1")
+                .normalize();
         }
 
-        function eliminarNumeros(texto){
+        function eliminarEspacios(texto) {
+            return texto.split(" ").join("")
+        }
+
+        function eliminarNumeros(texto) {
             return texto.replace(/[0-9]/g, '')
         }
 
-        $(".traduce").click(function() {
+        $(".traduce").click(function () {
             var str = $(".textValue").val()
             var str = eliminarDiacriticos(str)
             var str = eliminarEspacios(str)
             var str = eliminarNumeros(str)
-            
-                for(let letra of str){
-                     if((letra >= "a" && letra <= "z")){
-                        $(".senia div").empty();
-                            for (var i = 0; i < str.length; i++) {
-                                $(".senia div").append('<img class="letra-abc" src="assets/img/letras-svg/' + str[i] + '.svg">');
-                            }
-                            $(".activaSenia").click()
-                     }
-                    else {
 
+            for (let letra of str) {
+                if ((letra >= "a" && letra <= "z")) {
+                    $(".senia div").empty();
+                    for (var i = 0; i < str.length; i++) {
+                        $(".senia div").append('<img class="letra-abc" src="assets/img/letras-svg/2/' + str[i] + '.svg">');
                     }
+                    $(".activaSenia").click()
                 }
-            
+                else {
+
+                }
+            }
+
         })
 
 
-        $(".playVideo").click(function() {
+        $(".playVideo").click(function () {
             $(".videoContainer").addClass("bg-black")
             $(this).addClass("d-none")
             $(".videoContainer video").removeClass("d-none")
             $(".videoContainer i").removeClass("d-none")
             $(".videoContainer video")[0].play()
         })
-        $(".cerrarVideo").click(function() {
+        $(".cerrarVideo").click(function () {
             $(".videoContainer").removeClass("bg-black")
             $(".playVideo").removeClass("d-none")
+            $(".videoContainer video").attr("src", "assets/img/video.mp4")
             $(".videoContainer video").addClass("d-none")
             $(".videoContainer i").addClass("d-none")
             $(".videoContainer video")[0].pause();
             $(".videoContainer video")[0].currentTime = 0;
             $(".videoContainer video")[0].load();
         })
+        $("img.letra-abc").click(function () {
+            var videoVal = $(this).data("video");
+            $(".videoContainer").addClass("bg-black")
+            $(".playVideo").addClass("d-none")
+            $(".videoContainer video").removeClass("d-none")
+            $(".videoContainer i").removeClass("d-none")
+            $(".videoContainer video").attr("src", videoVal)
+            $(".videoContainer video")[0].play()
+        })
+
+        $('.scrollBtn').on('click', function () {
+
+        });
         if ($(window).width() > 960) {
             const sections = document.querySelectorAll("section");
 
@@ -585,9 +627,25 @@
                 });
 
             });
+            //LINKS CON ANCLAS
+            document.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    scrolling.disable();
+                    event.preventDefault();
+                    const scrollToHere = link.getAttribute('href')
+                    var tl = new TimelineMax({onComplete:someFunction}) ;
+                    tl.to(window, { duration: 2, scrollTo: scrollToHere });  
+                })
+                function someFunction() {
+                    scrolling.enable();
+                }
+
+            })
 
 
         }
+
+
     </script>
 </body>
 
