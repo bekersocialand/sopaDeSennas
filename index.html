@@ -334,7 +334,7 @@
                 <div class="row h-100 align-items-center justify-content-arround">
                     <div class="col-md-6 mx-auto text-center">
                         <img src="assets/img/presenta-logo.svg" class="w-100">
-                        <p class="texto-standard mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                       
                     </div>
                 </div>
             </div>
@@ -415,7 +415,7 @@
                             <img src="assets/img/letras-svg/2/l.svg" class="letra-abc" data-video="assets/videos/l.mp4">
                             <img src="assets/img/letras-svg/2/m.svg" class="letra-abc" data-video="assets/videos/m.mp4">
                             <img src="assets/img/letras-svg/2/n.svg" class="letra-abc" data-video="assets/videos/n.mp4">
-                            <img src="assets/img/letras-svg/2/nn.svg" class="letra-abc" data-video="assets/videos/nn.mp4">
+                            <img src="assets/img/letras-svg/2/ñ.svg" class="letra-abc" data-video="assets/videos/ñ.mp4">
                             <img src="assets/img/letras-svg/2/o.svg" class="letra-abc" data-video="assets/videos/o.mp4">
                             <img src="assets/img/letras-svg/2/p.svg" class="letra-abc" data-video="assets/videos/p.mp4">
                             <img src="assets/img/letras-svg/2/q.svg" class="letra-abc" data-video="assets/videos/q.mp4">
@@ -490,33 +490,27 @@
                 .normalize();
         }
 
-        function eliminarEspacios(texto) {
-            return texto.split(" ").join("")
-        }
-
         function eliminarNumeros(texto) {
             return texto.replace(/[0-9]/g, '')
         }
 
         $(".traduce").click(function() {
             var str = $(".textValue").val()
-            var str = eliminarDiacriticos(str)
-            var str = eliminarEspacios(str)
             var str = eliminarNumeros(str)
+            var str = eliminarDiacriticos(str)
 
-            for (let letra of str) {
-                if ((letra >= "a" && letra <= "z")) {
+            
                     $(".senia div").empty();
                     for (var i = 0; i < str.length; i++) {
-                        $(".senia div").append('<img class="letra-abc" src="assets/img/letras-svg/2/' + str[i] + '.svg">');
-                    }
-                    $(".activaSenia").click()
-                } else {
-
-                }
-            }
-
-        })
+                        if(str[i] === ' '){
+                            $(".senia div").append('<br/>');
+                        } else {
+                            $(".senia div").append('<img class="letra-abc" src="assets/img/letras-svg/2/' + str[i] + '.svg">');
+                        }
+                        
+                    } 
+                $(".activaSenia").click()
+            })
 
 
         $(".playVideo").click(function() {
