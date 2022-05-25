@@ -498,12 +498,19 @@
             return texto.replace(/[~`!@#$%^&*()+={}\[\];:\'\"<>.,\/\\\?-_¨¡´]/g, '');
             }
 
+        function minusculas(texto){
+            return texto.toLowerCase();
+        }
+
         $(".traduce").click(function() {
             var str = $(".textValue").val()
+            var str = minusculas(str)
             var str = eliminarNumeros(str)
             var str = eliminarDiacriticos(str)
             var str = eliminarEspeciales(str)
-            
+
+            console.log(str)
+
                     $(".senia div").empty();
                     for (var i = 0; i < str.length; i++) {
                         if(str[i] === ' '){
