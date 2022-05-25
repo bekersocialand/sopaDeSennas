@@ -494,11 +494,15 @@
             return texto.replace(/[0-9]/g, '')
         }
 
+        function eliminarEspeciales(texto) {
+            return texto.replace(/[~`!@#$%^&*()+={}\[\];:\'\"<>.,\/\\\?-_¨¡´]/g, '');
+            }
+
         $(".traduce").click(function() {
             var str = $(".textValue").val()
             var str = eliminarNumeros(str)
             var str = eliminarDiacriticos(str)
-
+            var str = eliminarEspeciales(str)
             
                     $(".senia div").empty();
                     for (var i = 0; i < str.length; i++) {
