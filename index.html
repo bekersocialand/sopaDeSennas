@@ -55,9 +55,10 @@
             --amarillo-sec: #ffdd6c;
             --blanco: #fff;
             --txt-lg: 3em;
+            --txt-mmd: 2.5em;
             --txt-md: 1em;
             --txt-sm: .8px;
-            --fondo-blanco: #fff!important;
+            --fondo-blanco: #fff !important;
             --fondo-gris-gradient: radial-gradient(circle, rgba(215, 216, 220, 1) 0%, rgba(252, 252, 253, 1) 50%, rgba(216, 216, 220, 1) 100%);
         }
         
@@ -66,7 +67,16 @@
         }
         
         body {
-            width: 100%
+            width: 100%;
+            background: var(--naranja);
+        }
+        
+        .preloader {
+            position: fixed;
+            height: 100vh;
+            width: 100%;
+            background: var(--naranja);
+            z-index: 999999999;
         }
         
         section {
@@ -84,7 +94,9 @@
             border-radius: 15px;
             background: var(--naranja);
             color: var(--amarillo-sec);
-            transition: all 0.5s ease
+            transition: all 0.5s ease;
+            box-shadow: 8px 6px 6px rgb(0 0 0 / 20%);
+            border: 1px solid rgba(0, 0, 0, .1);
         }
         
         .btn-primario:hover {
@@ -161,7 +173,7 @@
         .translate-box .head {
             display: block;
             border-bottom: 1px solid var(--amarillo-sec);
-            color: var(--amarillo-sec)!important;
+            color: var(--amarillo-sec) !important;
             text-align: left;
         }
         
@@ -181,6 +193,7 @@
         
         .translate-box .head a.active {
             opacity: 1;
+            font-weight: bold;
         }
         
         .translate-box .head a:hover {}
@@ -231,6 +244,13 @@
         
         img.letra-abc {
             margin: 10px 15px;
+            max-height: 70px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        
+        img.letra-abc.activo {
+            transform: scale(1.4);
         }
         
         .bg-video {
@@ -240,11 +260,12 @@
         }
         
         .bg-black {
-            background: black;
+            background: var(--naranja);
         }
         
         .videoContainer {
             transition: all 0.5s ease;
+            overflow: hidden;
         }
         
         .videoContainer video {
@@ -259,21 +280,81 @@
         }
         
         .bg-cierre {
-            background-image: url(assets/img/cierre.jpg);
+            /*background-image: url(assets/img/cierre.jpg);*/
             background-position: center;
             background-size: cover;
+            overflow: hidden;
         }
         
+        .hola-container img.hola-letra,
+        .hola-container img.hola-sena {
+            transition: all 0.5s ease;
+        }
+        
+        .hola-container img.hola-letra {
+            display: none;
+        }
+        
+        .hola-container img.hola-sena {
+            display: block;
+        }
+        
+        .hola-container:hover img.hola-sena {
+            display: none;
+        }
+        
+        .hola-container:hover img.hola-letra {
+            display: block;
+        }
+        .txt-sopita {
+            margin-top: -15%;
+        }
+        .txt-data{
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .mmd{
+            font-size: var(--txt-lg);
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+        }
+        .logo-pleca {
+            position: absolute;
+            left: 60%;
+            transform: translate(-50%, -50%);
+        }
+        .txt-placa {
+            font-size: var(--txt-md);
+            position: absolute;
+            left: 45%;
+            transform: translate(-50%, -50%);
+        }
+        .pleca {
+            height: 70px;
+            margin: 2em auto;
+        }
+                
         @media screen and (max-width:992px) {
             section {
                 height: auto;
+            }
+            .mmd {
+                font-size: var(--txt-mmd);
+                position: absolute;
+                top: 120%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
         
         @media screen and (max-width:768px) {
             .bg-cierre,
             .bg-video {
-                min-height: 500px!important;
+                min-height: 500px !important;
             }
             .translate-box .head a {
                 text-align: center;
@@ -284,6 +365,29 @@
             }
             .translate-box {
                 width: 90%;
+            }
+        }
+        @media (max-width: 576px){
+            h2 {
+                font-size: var(--txt-md);
+                font-weight: bold;
+                color: var(--amarillo);
+            }
+            .mmd {
+                font-size: var(--txt-md);
+                top: 85%;
+            }
+            .txt-placa {
+                font-size: var(--txt-md);
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .logo-pleca {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: 3.5em auto;
             }
         }
     </style>
@@ -299,14 +403,13 @@
                     <img src="assets/img/logo-self.svg">
                 </div>
                 <div class="col-md-10 text-right navi">
-                    <a href="#traductor">Traductor</a>
-                    <a href="#abecedario">Abecedario</a>
+
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="regular ">
+    <div class="regular preloader">
         <div class="container-fluid step step-1 h-100 ">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
@@ -316,51 +419,53 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
     <section class="regular">
         <div class="container-fluid step step-1 h-100 ">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-arround">
                     <div class="col-md-6 mx-auto text-center">
-                        <img src="assets/img/presenta-logo.svg" class="w-100">
-                        <p class="texto-standard mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                        <img src="assets/img/presenta-logo-2.png" class="w-100">
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="regular">
-        <div class="container-fluid step step-2 h-100">
+    <section class="regular empezar">
+        <div class="container-fluid step step-2 h-100 pre-traductor">
             <div class="container h-100">
                 <div class="row h-100 align-items-center">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-12 text-center txt-sopita">
                         <h1 class="mb-3">Aprende tus primeras palabras con señas.</h1>
-                        <a href="#" class="btn-primario py-2 px-4 mt-5">Empezar</a>
+                        <a href="javascript:void(0);" class="btn-primario py-2 px-4 mt-5 scrollBtn">Empezar</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="" id="traductor">
-        <div class="container-fluid step step-3 h-100">
+        <div class="container-fluid step step-3 h-100 traductor" id="traductor" style="display: none">
             <div class="row row-eq-height h-100 align-items-center">
-                <div class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100">
-                    <img src="assets/img/hola.png" class="img-fluid">
+                <div class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100 hola-container">
+                    <img src="assets/img/hola.png" class="img-fluid hola-sena hola">
+                    <img src="assets/img/hola-alt.png" class="img-fluid hola-letra hola">
 
                 </div>
                 <div class="col-md-6 text-center bg-patron py-5 px-2 px-md-5 d-flex align-items-center h-100">
                     <div class="translate-box mx-auto p-0 bg-naranja">
                         <div class="head">
                             <a href=" javascript:void(0);" class="active" data-translate="espa">Español</a>
-                            <a href=" javascript:void(0);" class="activaSenia" data-translate="senia">Lenguaje de Señas</a>
+                            <a href=" javascript:void(0);" class="activaSenia" data-translate="senia">Lenguaje de
+                                Señas</a>
                         </div>
                         <div class="content activo espa text-left py-2 px-4">
                             <textarea type="text" value="" placeholder="Escribe algo y tradúcelo a señas" class="textValue"></textarea>
                         </div>
                         <div class="content senia">
                             <div></div>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsopadesenas.com" class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Compartir<i class="fa-brands fa-facebook ml-2 "></i></a>
-                            <a href="https://twitter.com/intent/tweet?url=https://sopadesenas.com&text=Mira%20lo%20incre%C3%ADble%20que%20est%C3%A1" class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Tweet <i class="fa-brands fa-twitter ml-2 "></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsopadesenas.com" class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Compartir<i
+                                    class="fa-brands fa-facebook ml-2 "></i></a>
+                            <a href="https://twitter.com/intent/tweet?url=https://sopadesenas.com&text=Mira%20lo%20incre%C3%ADble%20que%20est%C3%A1" class="btn-primario py-2 px-4 my-3 d-inline-block sharing">Tweet <i
+                                    class="fa-brands fa-twitter ml-2 "></i></a>
                         </div>
 
                         <a href="javascript:void(0)" class="btn-primario py-2 px-4 mt-5 traduce"><strong>Traducir</strong></a>
@@ -368,17 +473,19 @@
                 </div>
             </div>
         </div>
-        </div>
     </section>
+
 
     <section class="" id="abecedario">
         <div class="container-fluid step step-3 h-100">
             <div class="row row-eq-height h-100 align-items-center">
-                <div class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100 bg-video videoContainer ">
-                    <a href="javascript:void(0);" class="mx-auto"> <img src="assets/img/tocar.svg" class="img-fluid mx-auto playVideo"></a>
-                    <i class="fa fa-times text-white  d-none cerrarVideo fa-2x "></i>
-                    <video class="w-100 d-none" controls playsinline>
-                        <source src="assets/img/video.mp4">
+                <div class="col-md-6 text-center bg-black  p-0 d-flex align-items-center h-100 bg-video videoContainer ">
+                    <a href="javascript:void(0);" class="mx-auto">
+                        <!--img src="assets/img/tocar.svg" class="img-fluid mx-auto playVideo"-->
+                    </a>
+                    <!--i class="fa fa-times text-white  d-none cerrarVideo fa-2x d-none"></i-->
+                    <video class="w-100" controls playsinline autoplay loop muted>
+                        <source src="assets/videos/a.mp4"  autoplay loop muted>
                     </video>
                 </div>
                 <div class="col-md-6 text-center bg-patron py-5 px-2 px-md-5 d-flex align-items-center h-100">
@@ -387,17 +494,33 @@
                         <div class="content activo espa text-center text-md-left py-2 px-4">
                             <h2 class="my-3">Abecedario</h2>
 
-                            <img src="assets/img/letras-svg/a.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/b.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/c.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/d.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/e.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/f.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/g.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/h.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/i.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/j.svg" class="letra-abc">
-                            <img src="assets/img/letras-svg/k.svg" class="letra-abc">
+                            <img src="assets/img/letras-svg/2/a.svg" class="letra-abc" data-video="assets/videos/a.mp4">
+                            <img src="assets/img/letras-svg/2/b.svg" class="letra-abc" data-video="assets/videos/b.mp4">
+                            <img src="assets/img/letras-svg/2/c.svg" class="letra-abc" data-video="assets/videos/c.mp4">
+                            <img src="assets/img/letras-svg/2/d.svg" class="letra-abc" data-video="assets/videos/d.mp4">
+                            <img src="assets/img/letras-svg/2/e.svg" class="letra-abc" data-video="assets/videos/e.mp4">
+                            <img src="assets/img/letras-svg/2/f.svg" class="letra-abc" data-video="assets/videos/f.mp4">
+                            <img src="assets/img/letras-svg/2/g.svg" class="letra-abc" data-video="assets/videos/g.mp4">
+                            <img src="assets/img/letras-svg/2/h.svg" class="letra-abc" data-video="assets/videos/h.mp4">
+                            <img src="assets/img/letras-svg/2/i.svg" class="letra-abc" data-video="assets/videos/i.mp4">
+                            <img src="assets/img/letras-svg/2/j.svg" class="letra-abc" data-video="assets/videos/j.mp4">
+                            <img src="assets/img/letras-svg/2/k.svg" class="letra-abc" data-video="assets/videos/k.mp4">
+                            <img src="assets/img/letras-svg/2/l.svg" class="letra-abc" data-video="assets/videos/l.mp4">
+                            <img src="assets/img/letras-svg/2/m.svg" class="letra-abc" data-video="assets/videos/m.mp4">
+                            <img src="assets/img/letras-svg/2/n.svg" class="letra-abc" data-video="assets/videos/n.mp4">
+                            <img src="assets/img/letras-svg/2/nn.svg" class="letra-abc" data-video="assets/videos/nn.mp4">
+                            <img src="assets/img/letras-svg/2/o.svg" class="letra-abc" data-video="assets/videos/o.mp4">
+                            <img src="assets/img/letras-svg/2/p.svg" class="letra-abc" data-video="assets/videos/p.mp4">
+                            <img src="assets/img/letras-svg/2/q.svg" class="letra-abc" data-video="assets/videos/q.mp4">
+                            <img src="assets/img/letras-svg/2/r.svg" class="letra-abc" data-video="assets/videos/r.mp4">
+                            <img src="assets/img/letras-svg/2/s.svg" class="letra-abc" data-video="assets/videos/s.mp4">
+                            <img src="assets/img/letras-svg/2/t.svg" class="letra-abc" data-video="assets/videos/t.mp4">
+                            <img src="assets/img/letras-svg/2/u.svg" class="letra-abc" data-video="assets/videos/u.mp4">
+                            <img src="assets/img/letras-svg/2/v.svg" class="letra-abc" data-video="assets/videos/v.mp4">
+                            <img src="assets/img/letras-svg/2/w.svg" class="letra-abc" data-video="assets/videos/w.mp4">
+                            <img src="assets/img/letras-svg/2/x.svg" class="letra-abc" data-video="assets/videos/x.mp4">
+                            <img src="assets/img/letras-svg/2/y.svg" class="letra-abc" data-video="assets/videos/y.mp4">
+                            <img src="assets/img/letras-svg/2/z.svg" class="letra-abc" data-video="assets/videos/z.mp4">
                         </div>
                     </div>
                 </div>
@@ -407,16 +530,31 @@
     <section class="">
         <div class="container-fluid step step-3 h-100">
             <div class="row row-eq-height h-100 align-items-center">
-                <div class="col-md-6 text-center bg-naranja p-5 d-flex align-items-center h-100 bg-cierre">
-
+                <div class="col-md-6 text-center bg-naranja p-0 d-flex align-items-center h-100 bg-cierre">
+                    <video class="w-100" controls playsinline autoplay loop muted>
+                        <source src="assets/videos/cierre.mp4"  autoplay loop muted>
+                    </video>
                 </div>
                 <div class="col-md-6 text-center bg-patron p-5 align-items-center h-100">
                     <img src="assets/img/mexico.svg" class="d-block w-100">
-                    <p class="texto-standard d-block w-100 d-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                    <h2 class="d-block w-100 d-block txt-data">
+                        En México hay más de 6 millones de personas con algún tipo de discapacidad auditiva
+                    </h2>
+
+                    <h1 class="d-block w-100 d-block mmd">Esto es solo un pequeño esfuerzo de La Moderna para que todos intentemos aprender señas y facilitar la comunicación entre todos.</h1>
                 </div>
             </div>
         </div>
     </section>
+
+    
+            <!-- Copyright -->
+              <div class="text-center d-flex align-items-center pleca">
+                <h1 class="d-flex align-items-center txt-placa">Ingresa aquí si quieres aprender más</h1>
+                <a class="text-reset fw-bold" href="https://www.aprendiendolsm.com/"><img class="logo-pleca" src="assets/img/logo_pleca.svg"></a>
+              </div>
+            <!-- Copyright -->
+   
 
 
 
@@ -453,14 +591,47 @@
 
         })
 
+        function eliminarDiacriticos(texto) {
+            return texto
+                .normalize('NFD')
+                .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi, "$1")
+                .normalize();
+        }
+
+        function eliminarNumeros(texto) {
+            return texto.replace(/[0-9]/g, '')
+        }
+
+        function eliminarEspeciales(texto) {
+            return texto.replace(/[~`!@#$%^&*()+={}\[\];:\'\"<>.,\/\\\?-_¨¡´]/g, '');
+        }
+
+        function minusculas(texto) {
+            return texto.toLowerCase();
+        }
+
         $(".traduce").click(function() {
             var str = $(".textValue").val()
+            var str = minusculas(str)
+            var str = eliminarNumeros(str)
+            var str = eliminarDiacriticos(str)
+            var str = eliminarEspeciales(str)
+
+            console.log(str)
+
             $(".senia div").empty();
             for (var i = 0; i < str.length; i++) {
-                $(".senia div").append('<img class="letra-abc" src="assets/img/letras-svg/' + str[i] + '.svg">');
+                if (str[i] === ' ') {
+                    $(".senia div").append('<br/>');
+                } else {
+                    $(".senia div").append('<img class="letra-abc" src="assets/img/letras-svg/2/' + str[i] + '.svg">');
+                }
+
             }
             $(".activaSenia").click()
         })
+
+
         $(".playVideo").click(function() {
             $(".videoContainer").addClass("bg-black")
             $(this).addClass("d-none")
@@ -471,14 +642,31 @@
         $(".cerrarVideo").click(function() {
             $(".videoContainer").removeClass("bg-black")
             $(".playVideo").removeClass("d-none")
+            $(".videoContainer video").attr("src", "assets/img/video.mp4")
             $(".videoContainer video").addClass("d-none")
             $(".videoContainer i").addClass("d-none")
             $(".videoContainer video")[0].pause();
             $(".videoContainer video")[0].currentTime = 0;
             $(".videoContainer video")[0].load();
         })
+        $("img.letra-abc").click(function() {
+            $("img.letra-abc.activo").removeClass("activo");
+            $(this).addClass("activo");
+            var videoVal = $(this).data("video");
+            $(".videoContainer").addClass("bg-black")
+            $(".playVideo").addClass("d-none")
+            $(".videoContainer video").removeClass("d-none")
+            $(".videoContainer i").removeClass("d-none")
+            $(".videoContainer video").attr("src", videoVal)
+            $(".videoContainer video")[0].play()
+        })
+
+        $('.scrollBtn').on('click', function() {
+            $(".pre-traductor").fadeOut(500);
+            $(".traductor").fadeIn(500);
+        });
         if ($(window).width() > 960) {
-            const sections = document.querySelectorAll("section");
+            const sections = document.querySelectorAll("section:not(.preloader)");
 
             // this scrolling object just allows us to conveniently call scrolling.enable(), scrolling.disable(), and check if scrolling.enabled is true. 
             // some browsers (like iOS Safari) handle scrolling on a separate thread and can cause things to get out of sync (jitter/jumpy), so when we're animating the scroll position, force an update of GSAP tweens when there's a scroll event in order to maintain synchronization)
@@ -539,7 +727,34 @@
                 });
 
             });
+            //LINKS CON ANCLAS
+            /*  document.querySelectorAll('a').forEach(function(link) {
+                  link.addEventListener('click', function(event) {
+                      scrolling.disable();
+                      event.preventDefault();
+                      const scrollToHere = link.getAttribute('href')
+                      var tl = new TimelineMax({
+                          onComplete: someFunction
+                      });
+                      tl.to(window, {
+                          duration: 2,
+                          scrollTo: scrollToHere
+                      });
+                  })
+
+                  function someFunction() {
+                      scrolling.enable();
+                  }
+
+              })*/
+
+
         }
+        $(window).load(function() {
+            $('.preloader').fadeOut('500', function() {
+                $(this).remove();
+            });
+        });
     </script>
 </body>
 
