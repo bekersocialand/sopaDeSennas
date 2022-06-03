@@ -311,31 +311,28 @@
         }
         .txt-data{
             position: absolute;
-            top: 35%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .mmd{
-            font-size: var(--txt-lg);
+        .mmd {
+            font-size: 24px;
             position: absolute;
-            top: 80%;
+            top: 77%;
             left: 50%;
-            transform: translate(-50%, -50%); 
-        }
-        .logo-pleca {
-            position: absolute;
-            left: 60%;
             transform: translate(-50%, -50%);
         }
+       
         .txt-placa {
             font-size: var(--txt-md);
             position: absolute;
-            left: 45%;
+            left: 40%;
             transform: translate(-50%, -50%);
         }
         .pleca {
-            height: 70px;
-            margin: 2em auto;
+            position: absolute;
+            top: 87.5%;
+            margin: auto 0rem;
         }
                 
         @media screen and (max-width:992px) {
@@ -349,6 +346,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
+
         }
         
         @media screen and (max-width:768px) {
@@ -375,20 +373,15 @@
             }
             .mmd {
                 font-size: var(--txt-md);
-                top: 85%;
+                top: 68%;
             }
             .txt-placa {
                 font-size: var(--txt-md);
                 position: absolute;
-                left: 50%;
+                left: 38%;
                 transform: translate(-50%, -50%);
             }
-            .logo-pleca {
-                position: absolute;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                margin: 3.5em auto;
-            }
+    
         }
     </style>
 </head>
@@ -399,11 +392,11 @@
     <header id="header">
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-6">
                     <img src="assets/img/logo-self.svg">
                 </div>
-                <div class="col-md-10 text-right navi">
-
+                <div class="col-md-6 text-right navi">
+                    <img src="assets/img/logo_superior.svg">
                 </div>
             </div>
         </div>
@@ -425,7 +418,7 @@
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-arround">
                     <div class="col-md-6 mx-auto text-center">
-                        <img src="assets/img/presenta-logo-2.png" class="w-100">
+                        <img src="assets/img/presenta-logo-2.svg" class="w-100">
 
                     </div>
                 </div>
@@ -535,26 +528,25 @@
                         <source src="assets/videos/cierre.mp4"  autoplay loop muted>
                     </video>
                 </div>
-                <div class="col-md-6 text-center bg-patron p-5 align-items-center h-100">
-                    <img src="assets/img/mexico.svg" class="d-block w-100">
-                    <h2 class="d-block w-100 d-block txt-data">
+                <div class="col-md-6 text-center bg-patron p-0 align-items-center h-100" style="background-size: auto 90%;">
+                    <img src="assets/img/mexico.svg" class="d-block m-auto" style="width: 100%">
+                    <h2 class="d-block w-100 d-block p-5 txt-data">
                         En México hay más de 6 millones de personas con algún tipo de discapacidad auditiva
                     </h2>
 
-                    <h1 class="d-block w-100 d-block mmd">Esto es solo un pequeño esfuerzo de La Moderna para que todos intentemos aprender señas y facilitar la comunicación entre todos.</h1>
+                    <h1 class="d-block w-100 d-block p-5 mmd">Esto es solo un pequeño esfuerzo de <img src="assets/img/8A075ECE.svg" class="img-fluid"> para que todos intentemos aprender señas y facilitar la comunicación entre todos.</h1>
+
+                    <!-- Copyright -->
+                      <div class="container pleca">
+                        <a class="text-reset fw-bold" href="https://www.aprendiendolsm.com/">
+                            <img class="img-fluid align-items-center" src="assets/img/logo_pleca.svg"></a>
+                      </div>
+                    <!-- Copyright -->
                 </div>
             </div>
         </div>
     </section>
 
-    
-            <!-- Copyright -->
-              <div class="text-center d-flex align-items-center pleca">
-                <h1 class="d-flex align-items-center txt-placa">Ingresa aquí si quieres aprender más</h1>
-                <a class="text-reset fw-bold" href="https://www.aprendiendolsm.com/"><img class="logo-pleca" src="assets/img/logo_pleca.svg"></a>
-              </div>
-            <!-- Copyright -->
-   
 
 
 
