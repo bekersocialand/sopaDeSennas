@@ -615,7 +615,11 @@
             for (var i = 0; i < str.length; i++) {
                 if (str[i] === ' ') {
                     $(".senia div").append('<br/>');
-                } else {
+                } 
+                else if (str[i] === 'ñ'){ 
+                    $(".senia div").append('<img class="letra-abc" src="assets/img/letras-svg/2/' + 'nn' + '.svg">');
+                }
+                else {
                     $(".senia div").append('<img class="letra-abc" src="assets/img/letras-svg/2/' + str[i] + '.svg">');
                 }
 
